@@ -704,7 +704,7 @@ class DBAPIError(StatementError):
     ):
         try:
             text = str(orig)
-        except Exception as e:
+        except (Exception) as e:
             text = "Error in str() of DB-API-generated exception: " + str(e)
         StatementError.__init__(
             self,
